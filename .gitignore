@@ -1,0 +1,13 @@
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Temporary directories
+.tmp/
