@@ -18,21 +18,49 @@
 			// "j k": "vim::NormalBefore"
 		}
 	},
- {
-   "context": "Editor",
-   "bindings": {
-     "ctrl-left": "editor::Fold"
-   }
- },
- {
-   "bindings": {
-     "cmd-shift-c": null
-   }
- },
- {
-   "context": "Editor",
-   "bindings": {
-     "cmd-shift-c": "workspace::CopyPath"
-   }
- }
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-left": "editor::Fold"
+		}
+	},
+	{
+		"bindings": {
+			"cmd-shift-c": null
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"cmd-shift-c": "workspace::CopyPath",
+			"alt-alt-a": "search::SelectPreviousMatch",
+			"alt-d": "search::SelectNextMatch"
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-\"": "zed::OpenKeymap",
+			"ctrl-shift-4": "zed::OpenDefaultSettings",
+			"ctrl-shift-5": "zed::OpenDefaultKeymap",
+			"ctrl-shift-6": [
+				"task::Spawn",
+				{
+					"command": "xo",
+					"args": ["/Users/risenowrise/v/fish/infra.yaml"]
+				}
+			]
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-!": "zed::OpenKeymapEditor"
+		}
+	},
+	{
+		"bindings": {
+			"ctrl-§": "zed::OpenSettings"
+		}
+	}
 ]
