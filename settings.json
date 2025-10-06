@@ -107,7 +107,8 @@
 		"font_size": 11.0
 	},
 	"project_panel": {
-		"auto_fold_dirs": false,
+		"dock": "left",
+  "auto_fold_dirs": false,
 		"auto_reveal_entries": false
 	},
 	"search": {
