@@ -1,7 +1,13 @@
 [
 	{
-		"label": "Transform: Deduplicate",
-		"command": "/Users/risenowrise/v/py/zed/run-dedup.sh",
+		"label": "Duplicate Lines ⌫",
+		"command": "tasks/duplicate-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "INFRA.yaml 🏗️",
+		"command": "/bin/zsh xo",
+		"args": ["/Users/risenowrise/v/fish/infra.yaml"],
 		"use_new_terminal": false
 	}
 ]

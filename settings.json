@@ -1,12 +1,15 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
+	"theme": "Alabaster BG",
+	"base_keymap": "VSCode",
+	"icon_theme": "Soft Charmed Icons",
+	"edit_predictions": {
+		"mode": "eager"
+	},
+	"agent": {
+		"play_sound_when_agent_done": true,
+		"model_parameters": []
+	},
 	"features": {
 		"edit_prediction_provider": "zed"
 	},
@@ -38,7 +41,7 @@
 	},
 	"buffer_font_family": "JetBrainsMono Nerd Font Propo",
 	"ui_font_family": ".SystemUIFont",
-	"max_tabs": 20,
+	"max_tabs": 8,
 	"use_system_path_prompts": false,
 	"restore_on_file_reopen": true,
 	"autosave": "on_focus_change",
@@ -120,28 +123,24 @@
 		"line_numbers": true
 	},
 	"minimap": {
-		"show": "auto",
-		"thumb": "always"
+		"show": "always",
+		"current_line_highlight": "all",
+		"display_in": "active_editor",
+		"thumb_border": "left_open",
+		"max_width_columns": 60
 	},
-	"hover_popover_delay": 700,
+	"hover_popover_delay": 100,
 	"selection_highlight": true,
+	"rounded_selection": true,
 	"current_line_highlight": "all",
 	"cursor_shape": "bar",
 	"cursor_blink": true,
 	"outline_panel": {
-		"git_status": true
+		"git_status": true,
+		"folder_icons": true,
+		"expand_outlines_with_depth": 12
 	},
 	"buffer_font_weight": 100.0,
-	"base_keymap": "VSCode",
-	"vim_mode": false,
-	"ui_font_size": 18.0,
-	"buffer_font_size": 14.0,
-	"theme": {
-		"mode": "system",
-		"light": "Catppuccin Latte (Blur) [Light]",
-		"dark": "VX Desert Frappé (Blur) [Light]"
-	},
-	"bindings": {
-		"cmd-ctrl-alt-r": "workspace::Reload"
-	}
+
+	"vim_mode": false
 }

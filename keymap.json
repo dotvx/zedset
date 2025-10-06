@@ -1,48 +1,28 @@
-// Zed keymap
+// @https://zed.dev/docs/key-bindings
+// @https://zed.dev/docs/all-actions
 //
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
 	{
-		"context": "Workspace",
-		"bindings": {
-			"shift shift": "file_finder::Toggle"
-		}
-	},
-	{
+		// vim mode
 		"context": "Editor && vim_mode == insert",
 		"bindings": {
 			// "j k": "vim::NormalBefore"
 		}
 	},
-	{
-		"context": "Editor",
-		"bindings": {
-			"ctrl-left": "editor::Fold"
-		}
-	},
-	{
-		"bindings": {
-			"cmd-shift-c": null
-		}
-	},
+
 	{
 		"context": "Editor",
 		"bindings": {
 			"cmd-shift-c": "workspace::CopyPath",
 			"alt-alt-a": "search::SelectPreviousMatch",
-			"alt-d": "search::SelectNextMatch"
+			"alt-d": "search::SelectNextMatch",
+			"shift shift": "editor::ToggleFold"
 		}
 	},
 	{
-		"context": "Workspace",
 		"bindings": {
-			"ctrl-\"": "zed::OpenKeymap",
+			"cmd-ctrl-alt-r": "workspace::Reload",
 			"ctrl-shift-4": "zed::OpenDefaultSettings",
-			"ctrl-shift-5": "zed::OpenDefaultKeymap",
 			"ctrl-shift-6": [
 				"task::Spawn",
 				{
@@ -53,7 +33,6 @@
 		}
 	},
 	{
-		"context": "Workspace",
 		"bindings": {
 			"ctrl-!": "zed::OpenKeymapEditor"
 		}
@@ -62,5 +41,32 @@
 		"bindings": {
 			"ctrl-§": "zed::OpenSettings"
 		}
-	}
+	},
+	{
+		"bindings": {
+			"ctrl-\"": "zed::OpenKeymap"
+		}
+	},
+	{
+		"bindings": {
+			"ctrl-shift-5": "zed::OpenDefaultKeymap"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"alt-x": "editor::DeleteLine"
+		}
+	},
+ {
+   "bindings": {
+     "ctrl-&": "zed::Extensions"
+   }
+ },
+ {
+   "context": "Editor",
+    "bindings": {
+     "cmd-d": "workspace::NewFileSplitVertical"
+   }
+ }
 ]
