@@ -1,0 +1,7 @@
+[
+	{
+		"label": "Transform: Deduplicate",
+		"command": "/Users/risenowrise/v/py/zed/run-dedup.sh",
+		"use_new_terminal": false
+	}
+]
