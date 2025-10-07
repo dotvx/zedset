@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wrapper to safely pipe ZED_SELECTED_TEXT to emptyLines.py and auto-paste via Hammerspoon
+# Wrapper to safely pipe ZED_SELECTED_TEXT to rm-empty-lines.py and auto-paste via Hammerspoon
 
 # Extract numeric value from flag (e.g., "-1" -> "1", "-2" -> "2")
 # Default to 0 if no argument provided
@@ -9,4 +9,4 @@ else
 	MAX_LINES="${1#-}"  # Remove leading dash
 fi
 
-printf '%s' "$ZED_SELECTED_TEXT" | /Users/risenowrise/v/py/zed/emptyLines.py "$MAX_LINES" | curl -X POST -d @- http://localhost:8888/paste -s
+printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/rm-empty-lines.py" "$MAX_LINES" | curl -X POST -d @- http://localhost:8888/paste -s

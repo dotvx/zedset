@@ -1,22 +1,346 @@
 [
 	{
+		"label": "🔤 UPPERCASE",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--upper"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 lowercase",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--lower"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 Title Case",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--title"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 camelCase",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--camel"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 PascalCase",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--pascal"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 snake_case",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--snake"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 kebab-case",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--kebab"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 SCREAMING_SNAKE_CASE",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--screaming"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 dot.case",
+		"command": "$ZED/tasks/case-transform.sh",
+		"args": ["--dot"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort Lines (A-Z)",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort Lines (Z-A)",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"args": ["--reverse"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort Lines (Numeric)",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"args": ["--numeric"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort Lines (By Length)",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"args": ["--length"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort + Unique",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"args": ["-u"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📊 Sort (Case-Insensitive)",
+		"command": "$ZED/tasks/sort-lines.sh",
+		"args": ["-i"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "✂️ Trim Whitespace",
+		"command": "$ZED/tasks/trim.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "✂️ Trim Leading",
+		"command": "$ZED/tasks/trim.sh",
+		"args": ["--leading"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "✂️ Trim Trailing",
+		"command": "$ZED/tasks/trim.sh",
+		"args": ["--trailing"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "✂️ Normalize Spaces",
+		"command": "$ZED/tasks/trim.sh",
+		"args": ["--normalize"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "✂️ Remove Blank Lines",
+		"command": "$ZED/tasks/trim.sh",
+		"args": ["--blank-lines"],
+		"use_new_terminal": false
+	},
+	{
 		"label": "⌫ Empty Lines: 0",
-		"command": "$ZED/tasks/emptyLines.sh",
+		"command": "$ZED/tasks/rm-empty-lines.sh",
 		"use_new_terminal": false
 	},
 	{
 		"label": "⌫ Empty Lines: 1",
-		"command": "$ZED/tasks/emptyLines.sh -1",
+		"command": "$ZED/tasks/rm-empty-lines.sh",
+		"args": ["-1"],
 		"use_new_terminal": false
 	},
 	{
 		"label": "⌫ Empty Lines: 2",
-		"command": "$ZED/tasks/emptyLines.sh -2",
+		"command": "$ZED/tasks/rm-empty-lines.sh",
+		"args": ["-2"],
 		"use_new_terminal": false
 	},
 	{
-		"label": "Inverse (123 <-> 321)",
-		"command": "$ZED/tasks/reverseOrder.sh",
+		"label": "⌫ Duplicate Lines (keep first)",
+		"command": "$ZED/tasks/rm-duplicate-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "⌫ Duplicate Lines (keep last)",
+		"command": "$ZED/tasks/rm-duplicate-lines.sh",
+		"args": ["--last"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "⌫ Keep Unique Lines",
+		"command": "$ZED/tasks/unique-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "⌫ Unique + Sort",
+		"command": "$ZED/tasks/unique-lines.sh",
+		"args": ["--sort"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔄 Inverse Line Order",
+		"command": "$ZED/tasks/inv-order-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔄 Shuffle Lines",
+		"command": "$ZED/tasks/shuffle-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Add Line Numbers",
+		"command": "$ZED/tasks/line-numbers.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Remove Line Numbers",
+		"command": "$ZED/tasks/line-numbers.sh",
+		"args": ["--remove"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Comment Lines (//)",
+		"command": "$ZED/tasks/prefix-suffix.sh",
+		"args": ["--prefix", "// "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Comment Lines (#)",
+		"command": "$ZED/tasks/prefix-suffix.sh",
+		"args": ["--prefix", "# "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Bullet Points (•)",
+		"command": "$ZED/tasks/prefix-suffix.sh",
+		"args": ["--bullet", "• "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Bullet Points (-)",
+		"command": "$ZED/tasks/prefix-suffix.sh",
+		"args": ["--bullet", "- "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🏷️ Bullet Points (*)",
+		"command": "$ZED/tasks/prefix-suffix.sh",
+		"args": ["--bullet", "* "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "\"\" Double Quotes",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "'' Single Quotes",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--single"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "`` Backticks",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--backtick"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "[] Square Brackets",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--bracket"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "() Parentheses",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--paren"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "<> Angle Brackets",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--angle"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📝 Array: \"a\", \"b\", \"c\"",
+		"command": "$ZED/tasks/quote-lines.sh",
+		"args": ["--join", ", "],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 URL Encode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--url-encode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 URL Decode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--url-decode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 Base64 Encode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--base64-encode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 Base64 Decode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--base64-decode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 HTML Encode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--html-encode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔐 HTML Decode",
+		"command": "$ZED/tasks/encode.sh",
+		"args": ["--html-decode"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔄 JSON → YAML",
+		"command": "$ZED/tasks/json-yaml.sh",
+		"args": ["--to-yaml"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔄 YAML → JSON",
+		"command": "$ZED/tasks/json-yaml.sh",
+		"args": ["--to-json"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "🔤 Sort JSON Keys",
+		"command": "$ZED/tasks/sort-json.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "📐 Convert to Tabs",
+		"command": "$ZED/tasks/indent.sh",
+		"args": ["--tabs"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📐 Convert to 2 Spaces",
+		"command": "$ZED/tasks/indent.sh",
+		"args": ["--spaces", "2"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📐 Convert to 4 Spaces",
+		"command": "$ZED/tasks/indent.sh",
+		"args": ["--spaces", "4"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📐 Indent +1 Level",
+		"command": "$ZED/tasks/indent.sh",
+		"args": ["--indent", "1"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📐 Dedent -1 Level",
+		"command": "$ZED/tasks/indent.sh",
+		"args": ["--dedent", "1"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📝 Wrap Text (80 chars)",
+		"command": "$ZED/tasks/wrap-text.sh",
+		"args": ["--width", "80"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "📝 Wrap Text (100 chars)",
+		"command": "$ZED/tasks/wrap-text.sh",
+		"args": ["--width", "100"],
 		"use_new_terminal": false
 	},
 	{

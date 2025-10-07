@@ -7,7 +7,7 @@
 ## When working on Settings:
 
 ```zsh
-Webfetch(https://zed.dev/docs/settings)
+Webfetch(https://zed.dev/docs/configuring-zed)
 Read(settings.json)
 ```
 
@@ -24,7 +24,7 @@ Read(tasks.json)
 
 ```zsh
 Webfetch(https://zed.dev/docs/themes)
-Read(./themes/vx.desert.json)
+Read(./themes/vx-desert.json)
 ```
 
 ## When working on Tasks:
