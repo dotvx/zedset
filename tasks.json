@@ -1,12 +1,27 @@
 [
 	{
-		"label": "Duplicate Lines ⌫",
-		"command": "tasks/duplicate-lines.sh",
+		"label": "⌫ Empty Lines: 0",
+		"command": "$ZED/tasks/emptyLines.sh",
 		"use_new_terminal": false
 	},
 	{
-		"label": "INFRA.yaml 🏗️",
-		"command": "/bin/zsh xo",
+		"label": "⌫ Empty Lines: 1",
+		"command": "$ZED/tasks/emptyLines.sh -1",
+		"use_new_terminal": false
+	},
+	{
+		"label": "⌫ Empty Lines: 2",
+		"command": "$ZED/tasks/emptyLines.sh -2",
+		"use_new_terminal": false
+	},
+	{
+		"label": "Inverse (123 <-> 321)",
+		"command": "$ZED/tasks/reverseOrder.sh",
+		"use_new_terminal": false
+	},
+	{
+		"label": "INFRA.y",
+		"command": "xo",
 		"args": ["/Users/risenowrise/v/fish/infra.yaml"],
 		"use_new_terminal": false
 	}

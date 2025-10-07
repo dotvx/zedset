@@ -53,20 +53,38 @@
 		}
 	},
 	{
+		"bindings": {
+			"ctrl-&": "zed::Extensions"
+		}
+	},
+	{
 		"context": "Editor",
 		"bindings": {
 			"alt-x": "editor::DeleteLine"
 		}
 	},
+
+	{
+		"context": "Editor",
+		"bindings": {
+			"cmd-d": "workspace::NewFileSplitVertical"
+		}
+	},
  {
    "bindings": {
-     "ctrl-&": "zed::Extensions"
+     "ctrl-$": "zed::OpenTasks"
    }
  },
  {
    "context": "Editor",
     "bindings": {
-     "cmd-d": "workspace::NewFileSplitVertical"
+     "alt-s": "editor::SortLinesCaseInsensitive"
+   }
+ },
+ {
+   "context": "Editor",
+    "bindings": {
+     "alt-shift-s": "editor::SortLinesByLength"
    }
  }
 ]

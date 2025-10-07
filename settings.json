@@ -1,6 +1,10 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
-	"theme": "Alabaster BG",
+	"theme": {
+		"mode": "system",
+		"light": "ZedHacker Monochrome",
+		"dark": "VX Desert Mocha (Blur) [Light]"
+	},
 	"base_keymap": "VSCode",
 	"icon_theme": "Soft Charmed Icons",
 	"edit_predictions": {
