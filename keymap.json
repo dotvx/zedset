@@ -20,14 +20,18 @@
 	},
 	{
 		"bindings": {
-			"cmd-shift-r": "workspace::Reload",
-			"cmd-shift-1": "zed::OpenKeymapEditor",
-			"cmd-shift-2": "zed::OpenSettings",
-			"cmd-shift-3": "zed::OpenKeymap",
-			"cmd-shift-4": "zed::OpenTasks",
-			"cmd-shift-5": "zed::OpenDefaultSettings",
-			"cmd-shift-6": "zed::OpenDefaultKeymap",
-			"cmd-shift-7": "zed::Extensions"
+			"ctrl-r": "workspace::Reload",
+			"ctrl-!": "zed::OpenKeymapEditor",
+			"ctrl-#": "zed::OpenSettings",
+			"ctrl-@": "zed::OpenKeymap",
+			"ctrl-$": "zed::OpenTasks",
+			"ctrl-%": "zed::OpenDefaultSettings",
+			"ctrl-^": "zed::OpenDefaultKeymap",
+			"ctrl-*": "zed::Extensions",
+			"ctrl-(": ["task::Spawn", {"task_name": "Open Themes"}],
+			"ctrl-)": ["task::Spawn", {"task_name": "Open Ghostty Config"}],
+			"ctrl-_": ["task::Spawn", {"task_name": "Open Infra YAML"}],
+			"ctrl-+": ["task::Spawn", {"task_name": "Open Fish Config"}]
 		}
 	},
 	{

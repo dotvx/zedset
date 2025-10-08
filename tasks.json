@@ -1,59 +1,5 @@
 [
 	{
-		"label": "🔤 UPPERCASE",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--upper"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 lowercase",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--lower"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 Title Case",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--title"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 camelCase",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--camel"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 PascalCase",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--pascal"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 snake_case",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--snake"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 kebab-case",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--kebab"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 SCREAMING_SNAKE_CASE",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--screaming"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "🔤 dot.case",
-		"command": "$ZED/tasks/case-transform.sh",
-		"args": ["--dot"],
-		"use_new_terminal": false
-	},
-	{
 		"label": "📊 Sort Lines (A-Z)",
 		"command": "$ZED/tasks/sort-lines.sh",
 		"use_new_terminal": false
@@ -80,12 +26,6 @@
 		"label": "📊 Sort + Unique",
 		"command": "$ZED/tasks/sort-lines.sh",
 		"args": ["-u"],
-		"use_new_terminal": false
-	},
-	{
-		"label": "📊 Sort (Case-Insensitive)",
-		"command": "$ZED/tasks/sort-lines.sh",
-		"args": ["-i"],
 		"use_new_terminal": false
 	},
 	{
@@ -347,6 +287,30 @@
 		"label": "INFRA.y",
 		"command": "xo",
 		"args": ["/Users/risenowrise/v/fish/infra.yaml"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "Open Themes",
+		"command": "zed",
+		"args": ["--add", "$ZED/themes/*.json"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "Open Ghostty Config",
+		"command": "zed",
+		"args": ["--add", "$GHOST/config"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "Open Infra YAML",
+		"command": "zed",
+		"args": ["--add", "$F/infra.yaml"],
+		"use_new_terminal": false
+	},
+	{
+		"label": "Open Fish Config",
+		"command": "zed",
+		"args": ["--add", "$F/config.fish"],
 		"use_new_terminal": false
 	}
 ]
