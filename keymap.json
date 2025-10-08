@@ -9,82 +9,33 @@
 			// "j k": "vim::NormalBefore"
 		}
 	},
-
 	{
 		"context": "Editor",
 		"bindings": {
-			"cmd-shift-c": "workspace::CopyPath",
-			"alt-alt-a": "search::SelectPreviousMatch",
+			"shift shift": "editor::ToggleFold",
+			"alt-a": "search::SelectPreviousMatch",
 			"alt-d": "search::SelectNextMatch",
-			"shift shift": "editor::ToggleFold"
-		}
-	},
-	{
-		"bindings": {
-			"cmd-ctrl-alt-r": "workspace::Reload",
-			"ctrl-shift-4": "zed::OpenDefaultSettings",
-			"ctrl-shift-6": [
-				"task::Spawn",
-				{
-					"command": "xo",
-					"args": ["/Users/risenowrise/v/fish/infra.yaml"]
-				}
-			]
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-!": "zed::OpenKeymapEditor"
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-§": "zed::OpenSettings"
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-\"": "zed::OpenKeymap"
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-shift-5": "zed::OpenDefaultKeymap"
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-&": "zed::Extensions"
-		}
-	},
-	{
-		"context": "Editor",
-		"bindings": {
 			"alt-x": "editor::DeleteLine"
 		}
 	},
-
 	{
-		"context": "Editor",
 		"bindings": {
-			"cmd-d": "workspace::NewFileSplitVertical"
+			"cmd-shift-r": "workspace::Reload",
+			"cmd-shift-1": "zed::OpenKeymapEditor",
+			"cmd-shift-2": "zed::OpenSettings",
+			"cmd-shift-3": "zed::OpenKeymap",
+			"cmd-shift-4": "zed::OpenTasks",
+			"cmd-shift-5": "zed::OpenDefaultSettings",
+			"cmd-shift-6": "zed::OpenDefaultKeymap",
+			"cmd-shift-7": "zed::Extensions"
 		}
 	},
- {
-   "bindings": {
-     "ctrl-$": "zed::OpenTasks"
-   }
- },
- {
-   "context": "Editor",
-    "bindings": {
-     "alt-s": "editor::SortLinesCaseInsensitive"
-   }
- },
- {
-   "context": "Editor",
-    "bindings": {
-     "alt-shift-s": "editor::SortLinesByLength"
-   }
- }
+	{
+		"bindings": {
+			"alt-s": "editor::SortLinesCaseInsensitive",
+			"alt-shift-s": "editor::SortLinesByLength",
+			"cmd-d": "workspace::NewFileSplitVertical",
+			"cmd-shift-c": "workspace::CopyPath"
+		}
+	}
 ]
