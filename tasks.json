@@ -1,34 +1,5 @@
 [
     {
-        "label": "📊 Sort Lines (A-Z)",
-        "command": "$ZED/tasks/sort-lines.sh",
-        "use_new_terminal": false
-    },
-    {
-        "label": "📊 Sort Lines (Z-A)",
-        "command": "$ZED/tasks/sort-lines.sh",
-        "args": ["--reverse"],
-        "use_new_terminal": false
-    },
-    {
-        "label": "📊 Sort Lines (Numeric)",
-        "command": "$ZED/tasks/sort-lines.sh",
-        "args": ["--numeric"],
-        "use_new_terminal": false
-    },
-    {
-        "label": "📊 Sort Lines (By Length)",
-        "command": "$ZED/tasks/sort-lines.sh",
-        "args": ["--length"],
-        "use_new_terminal": false
-    },
-    {
-        "label": "📊 Sort + Unique",
-        "command": "$ZED/tasks/sort-lines.sh",
-        "args": ["-u"],
-        "use_new_terminal": false
-    },
-    {
         "label": "✂️ Trim Whitespace",
         "command": "$ZED/tasks/trim.sh",
         "use_new_terminal": false

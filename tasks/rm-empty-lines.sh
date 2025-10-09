@@ -1,12 +1,26 @@
 #!/bin/bash
-# Wrapper to safely pipe ZED_SELECTED_TEXT to rm-empty-lines.py and auto-paste via Hammerspoon
+# Remove or limit consecutive empty lines from ZED_SELECTED_TEXT
 
-# Extract numeric value from flag (e.g., "-1" -> "1", "-2" -> "2")
-# Default to 0 if no argument provided
-if [ -z "$1" ]; then
-	MAX_LINES=0
-else
-	MAX_LINES="${1#-}"  # Remove leading dash
-fi
+# Parse max empty lines argument (default: 0)
+MAX_LINES="${1#-}"
+[ -z "$MAX_LINES" ] && MAX_LINES=0
 
-printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/rm-empty-lines.py" "$MAX_LINES" | curl -X POST -d @- http://localhost:8888/paste -s
+# Process input line by line
+empty_count=0
+result=""
+
+while IFS= read -r line || [ -n "$line" ]; do
+    # Check if line is empty or whitespace-only
+    if [[ -z "${line// /}" ]]; then
+        ((empty_count++))
+        if [ $empty_count -le $MAX_LINES ]; then
+            result+="$line"$'\n'
+        fi
+    else
+        empty_count=0
+        result+="$line"$'\n'
+    fi
+done <<< "$ZED_SELECTED_TEXT"
+
+# Remove trailing newline and send to Hammerspoon
+printf '%s' "${result%$'\n'}" | curl -X POST -d @- http://localhost:8888/paste -s
