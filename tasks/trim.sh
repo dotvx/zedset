@@ -15,8 +15,7 @@ for arg in "$@"; do
     esac
 done
 
-result=""
-
+# Process and pipe directly to avoid losing newlines
 while IFS= read -r line || [ -n "$line" ]; do
     # Skip blank lines if requested
     if [ $BLANK_LINES -eq 1 ] && [[ -z "${line// /}" ]]; then
@@ -42,8 +41,5 @@ while IFS= read -r line || [ -n "$line" ]; do
             ;;
     esac
 
-    result+="$line"$'\n'
-done <<< "$ZED_SELECTED_TEXT"
-
-# Send to Hammerspoon
-printf '%s' "${result%$'\n'}" | curl -X POST -d @- http://localhost:8888/paste -s
+    echo "$line"
+done <<< "$ZED_SELECTED_TEXT" | curl -X POST -d @- http://localhost:8888/paste -s

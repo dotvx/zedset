@@ -1,5 +1,39 @@
 #!/bin/bash
-# Wrapper to pipe ZED_SELECTED_TEXT to indent.py and auto-paste via Hammerspoon
+# Convert indentation or adjust indent levels
 
-# Pass all args to indent.py (e.g., --spaces 4, --tabs, --indent 1)
-printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/indent.py" "$@" | curl -X POST -d @- http://localhost:8888/paste -s
+MODE=""
+SPACES=4
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --tabs) MODE="tabs"; shift ;;
+        --spaces) MODE="spaces"; SPACES="$2"; shift 2 ;;
+        --indent) MODE="indent"; SPACES="$2"; shift 2 ;;
+        --dedent) MODE="dedent"; SPACES="$2"; shift 2 ;;
+        *) shift ;;
+    esac
+done
+
+case "$MODE" in
+    tabs)
+        # Convert spaces to tabs (assume 4 spaces = 1 tab)
+        printf '%s' "$ZED_SELECTED_TEXT" | sed 's/    /\t/g' | curl -X POST -d @- http://localhost:8888/paste -s
+        ;;
+    spaces)
+        # Convert tabs to spaces
+        printf '%s' "$ZED_SELECTED_TEXT" | expand -t "$SPACES" | curl -X POST -d @- http://localhost:8888/paste -s
+        ;;
+    indent)
+        # Add indent
+        indent_str=$(printf "%${SPACES}s" | tr ' ' ' ')
+        printf '%s' "$ZED_SELECTED_TEXT" | sed "s/^/$indent_str/" | curl -X POST -d @- http://localhost:8888/paste -s
+        ;;
+    dedent)
+        # Remove indent
+        printf '%s' "$ZED_SELECTED_TEXT" | sed "s/^\\s\\{1,$SPACES\\}//" | curl -X POST -d @- http://localhost:8888/paste -s
+        ;;
+    *)
+        printf '%s' "$ZED_SELECTED_TEXT" | curl -X POST -d @- http://localhost:8888/paste -s
+        ;;
+esac

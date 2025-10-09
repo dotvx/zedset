@@ -1,5 +1,15 @@
 #!/bin/bash
-# Wrapper to pipe ZED_SELECTED_TEXT to wrap-text.py and auto-paste via Hammerspoon
+# Wrap text at specified width
 
-# Pass all args to wrap-text.py (e.g., --width 80, --preserve-short)
-printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/wrap-text.py" "$@" | curl -X POST -d @- http://localhost:8888/paste -s
+WIDTH=80
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --width) WIDTH="$2"; shift 2 ;;
+        *) shift ;;
+    esac
+done
+
+# Use fold to wrap text
+printf '%s' "$ZED_SELECTED_TEXT" | fold -s -w "$WIDTH" | curl -X POST -d @- http://localhost:8888/paste -s

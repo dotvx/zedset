@@ -20,27 +20,24 @@ if [ -z "$MODE" ]; then
     exit 2
 fi
 
-# Perform encoding/decoding
+# Perform encoding/decoding and pipe directly
 case "$MODE" in
     url_encode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | jq -sRr '@uri')
+        printf '%s' "$ZED_SELECTED_TEXT" | jq -sRr '@uri' | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     url_decode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(sys.stdin.read()), end="")')
+        printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(sys.stdin.read()), end="")' | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     base64_encode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | base64)
+        printf '%s' "$ZED_SELECTED_TEXT" | base64 | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     base64_decode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | base64 -d)
+        printf '%s' "$ZED_SELECTED_TEXT" | base64 -d | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     html_encode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, html; print(html.escape(sys.stdin.read()), end="")')
+        printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, html; print(html.escape(sys.stdin.read()), end="")' | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     html_decode)
-        output=$(printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, html; print(html.unescape(sys.stdin.read()), end="")')
+        printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, html; print(html.unescape(sys.stdin.read()), end="")' | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
 esac
-
-# Send to Hammerspoon
-printf '%s' "$output" | curl -X POST -d @- http://localhost:8888/paste -s

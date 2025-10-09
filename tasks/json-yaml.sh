@@ -1,7 +1,35 @@
 #!/bin/bash
-# Wrapper to pipe ZED_SELECTED_TEXT to json-yaml.py and auto-paste via Hammerspoon
+# Convert between JSON and YAML
 
-# Default to auto-detect and convert, or pass --to-json/--to-yaml
-ARGS="${1:---to-yaml}"
+MODE=""
 
-printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/json-yaml.py" "$ARGS" | curl -X POST -d @- http://localhost:8888/paste -s
+# Parse arguments
+for arg in "$@"; do
+    case "$arg" in
+        --to-yaml) MODE="to_yaml" ;;
+        --to-json) MODE="to_json" ;;
+    esac
+done
+
+case "$MODE" in
+    to_yaml)
+        # JSON to YAML (using python3 or yq if available)
+        if command -v yq &> /dev/null; then
+            printf '%s' "$ZED_SELECTED_TEXT" | yq -P | curl -X POST -d @- http://localhost:8888/paste -s
+        else
+            printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, json, yaml; print(yaml.dump(json.load(sys.stdin), default_flow_style=False), end="")' | curl -X POST -d @- http://localhost:8888/paste -s
+        fi
+        ;;
+    to_json)
+        # YAML to JSON (using python3 or yq if available)
+        if command -v yq &> /dev/null; then
+            printf '%s' "$ZED_SELECTED_TEXT" | yq -o=json | curl -X POST -d @- http://localhost:8888/paste -s
+        else
+            printf '%s' "$ZED_SELECTED_TEXT" | python3 -c 'import sys, json, yaml; print(json.dumps(yaml.safe_load(sys.stdin), indent=2), end="")' | curl -X POST -d @- http://localhost:8888/paste -s
+        fi
+        ;;
+    *)
+        echo "Error: Must specify --to-yaml or --to-json" >&2
+        exit 2
+        ;;
+esac

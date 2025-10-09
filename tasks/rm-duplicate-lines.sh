@@ -1,7 +1,19 @@
 #!/bin/bash
-# Wrapper to safely pipe ZED_SELECTED_TEXT to rm-duplicate-lines.py and auto-paste via Hammerspoon
+# Remove duplicate lines (keep first or last occurrence)
 
-# Default to --first, but allow --last as optional argument
-MODE="${1:---first}"
+KEEP_LAST=0
 
-printf '%s' "$ZED_SELECTED_TEXT" | "$ZED/tasks/rm-duplicate-lines.py" "$MODE" | curl -X POST -d @- http://localhost:8888/paste -s
+# Parse arguments
+for arg in "$@"; do
+    case "$arg" in
+        --last) KEEP_LAST=1 ;;
+    esac
+done
+
+if [ $KEEP_LAST -eq 1 ]; then
+    # Keep last occurrence: reverse, dedupe, reverse back
+    printf '%s' "$ZED_SELECTED_TEXT" | tac | awk '!seen[$0]++' | tac | curl -X POST -d @- http://localhost:8888/paste -s
+else
+    # Keep first occurrence: use awk directly
+    printf '%s' "$ZED_SELECTED_TEXT" | awk '!seen[$0]++' | curl -X POST -d @- http://localhost:8888/paste -s
+fi
