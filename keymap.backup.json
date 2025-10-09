@@ -86,16 +86,5 @@
         "bindings": {
             "cmd-shift-c": "workspace::CopyPath"
         }
-    },
-    {
-      "bindings": {
-        "cmd-shift-d": "workspace::NewFileSplitHorizontal"
-      }
-    },
-    {
-      "context": "Editor",
-      "bindings": {
-        "alt-`": "editor::MoveToEnclosingBracket"
-      }
     }
 ]
