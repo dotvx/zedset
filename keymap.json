@@ -2,44 +2,68 @@
 // @https://zed.dev/docs/all-actions
 //
 [
-	{
-		// vim mode
-		"context": "Editor && vim_mode == insert",
-		"bindings": {
-			// "j k": "vim::NormalBefore"
-		}
-	},
-	{
-		"context": "Editor",
-		"bindings": {
-			"shift shift": "editor::ToggleFold",
-			"alt-a": "search::SelectPreviousMatch",
-			"alt-d": "search::SelectNextMatch",
-			"alt-x": "editor::DeleteLine"
-		}
-	},
-	{
-		"bindings": {
-			"ctrl-r": "workspace::Reload",
-			"ctrl-!": "zed::OpenKeymapEditor",
-			"ctrl-#": "zed::OpenSettings",
-			"ctrl-@": "zed::OpenKeymap",
-			"ctrl-$": "zed::OpenTasks",
-			"ctrl-%": "zed::OpenDefaultSettings",
-			"ctrl-^": "zed::OpenDefaultKeymap",
-			"ctrl-*": "zed::Extensions",
-			"ctrl-(": ["task::Spawn", {"task_name": "Open Themes"}],
-			"ctrl-)": ["task::Spawn", {"task_name": "Open Ghostty Config"}],
-			"ctrl-_": ["task::Spawn", {"task_name": "Open Infra YAML"}],
-			"ctrl-+": ["task::Spawn", {"task_name": "Open Fish Config"}]
-		}
-	},
-	{
-		"bindings": {
-			"alt-s": "editor::SortLinesCaseInsensitive",
-			"alt-shift-s": "editor::SortLinesByLength",
-			"cmd-d": "workspace::NewFileSplitVertical",
-			"cmd-shift-c": "workspace::CopyPath"
-		}
-	}
+    {
+        // vim mode
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "shift shift": "editor::ToggleFold",
+            "cmd-d": "workspace::NewFileSplitVertical",
+            "alt-a": "search::SelectPreviousMatch",
+            "alt-d": "search::SelectNextMatch",
+            "alt-x": "editor::DeleteLine"
+        }
+    },
+    {
+        "bindings": {
+            "ctrl-!": "zed::OpenKeymapEditor",
+            "ctrl-@": "zed::OpenKeymap",
+            "ctrl-#": "zed::OpenDefaultKeymap",
+            "ctrl-$": "zed::OpenSettings",
+            "ctrl-%": "zed::OpenDefaultSettings",
+            "ctrl-^": "zed::OpenTasks",
+            "ctrl-&": "zed::Extensions",
+            "ctrl-(": ["task::Spawn", { "task_name": "Open Themes" }],
+            "ctrl-)": ["task::Spawn", { "task_name": "Open Ghostty Config" }],
+            "ctrl-_": ["task::Spawn", { "task_name": "Open Infra YAML" }],
+            "ctrl-+": ["task::Spawn", { "task_name": "Open Fish Config" }]
+        }
+    },
+    {
+        "bindings": {
+            "alt-s": "editor::SortLinesCaseInsensitive",
+            "alt-shift-s": "editor::SortLinesByLength",
+            "cmd-shift-c": "workspace::CopyPath",
+            "ctrl-r": "workspace::Reload"
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "cmd-shift-d": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-k ctrl-cmd-d": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-cmd-d": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-k cmd-d": null
+        }
+    }
 ]
