@@ -10,10 +10,10 @@
     // - "dark": Use the theme indicated by the "dark" field
     "theme": {
         "mode": "system",
-        "light": "ZedHacker Monochrome",
+        "light": "Alabaster BG",
         "dark": "VX Desert Mocha (Blur) [Light]"
     },
-    "icon_theme": "Soft Charmed Icons",
+    "icon_theme": "Warm Charmed Icons",
     // The name of a base set of key bindings to use.
     // This setting can take six values, each named after another
     // text editor:
@@ -1214,13 +1214,7 @@
             "ensure_final_newline_on_save": false
         },
         "Elixir": {
-            "language_servers": [
-                "elixir-ls",
-                "!expert",
-                "!next-ls",
-                "!lexical",
-                "..."
-            ]
+            "language_servers": ["elixir-ls", "!expert", "!next-ls", "!lexical", "..."]
         },
         "Elm": {
             "tab_size": 4
@@ -1245,13 +1239,7 @@
             }
         },
         "HEEX": {
-            "language_servers": [
-                "elixir-ls",
-                "!expert",
-                "!next-ls",
-                "!lexical",
-                "..."
-            ]
+            "language_servers": ["elixir-ls", "!expert", "!next-ls", "!lexical", "..."]
         },
         "HTML": {
             "prettier": {
@@ -1320,14 +1308,7 @@
             "debuggers": ["Debugpy"]
         },
         "Ruby": {
-            "language_servers": [
-                "solargraph",
-                "!ruby-lsp",
-                "!rubocop",
-                "!sorbet",
-                "!steep",
-                "..."
-            ]
+            "language_servers": ["solargraph", "!ruby-lsp", "!rubocop", "!sorbet", "!steep", "..."]
         },
         "Rust": {
             "debuggers": ["CodeLLDB"]

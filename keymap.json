@@ -38,7 +38,7 @@
         "bindings": {
             "alt-s": "editor::SortLinesCaseInsensitive",
             "alt-shift-s": "editor::SortLinesByLength",
-            "ctrl-r": "workspace::Reload"
+            "ctrl-R": "workspace::Reload"
         }
     },
     {
@@ -71,20 +71,20 @@
         }
     },
     {
-      "bindings": {
-        "cmd-shift-c": null
-      }
+        "bindings": {
+            "cmd-shift-c": null
+        }
     },
     {
-      "context": "Editor",
-      "bindings": {
-        "cmd-shift-c": "workspace::CopyPath"
-      }
+        "context": "Editor",
+        "bindings": {
+            "cmd-shift-c": "workspace::CopyPath"
+        }
     },
     {
-      "context": "ProjectPanel",
-      "bindings": {
-        "cmd-shift-c": "workspace::CopyPath"
-      }
+        "context": "ProjectPanel",
+        "bindings": {
+            "cmd-shift-c": "workspace::CopyPath"
+        }
     }
 ]
