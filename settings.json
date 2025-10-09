@@ -42,7 +42,7 @@
         // "calt": false
     },
     // The default font size for text in the editor
-    "buffer_font_size": 15,
+    "buffer_font_size": 14,
     // The weight of the editor font in standard CSS units from 100 to 900.
     "buffer_font_weight": 100.0,
     // Set the buffer's line height.
@@ -72,7 +72,7 @@
     // The weight of the UI font in standard CSS units from 100 to 900.
     "ui_font_weight": 200,
     // The default font size for text in the UI
-    "ui_font_size": 16,
+    "ui_font_size": 14,
     // The default font size for text in the agent panel. Falls back to the UI font size if unset.
     "agent_font_size": null,
     // How much to fade out unused code.
@@ -96,15 +96,15 @@
     "centered_layout": {
         // The relative width of the left padding of the central pane from the
         // workspace when the centered layout is used.
-        "left_padding": 0.2,
+        "left_padding": 0.1,
         // The relative width of the right padding of the central pane from the
         // workspace when the centered layout is used.
-        "right_padding": 0.2
+        "right_padding": 0.0
     },
     // Image viewer settings
     "image_viewer": {
         // The unit for image file sizes: "binary" (KiB, MiB) or decimal (KB, MB)
-        "unit": "binary"
+        "unit": "decimal"
     },
     // Determines the modifier to be used to add multiple cursors with the mouse. The open hover link mouse gestures will adapt such that it do not conflict with the multicursor modifier.
     //
@@ -124,7 +124,7 @@
     // Time to wait in milliseconds before showing the informational hover box.
     "hover_popover_delay": 100,
     // Whether to confirm before quitting Zed.
-    "confirm_quit": false,
+    "confirm_quit": true,
     // Whether to restore last closed project when fresh Zed instance is opened
     // May take 3 values:
     //  1. All workspaces open during last session
@@ -144,7 +144,7 @@
     // Default: true
     "restore_on_file_reopen": true,
     // Whether to automatically close files that have been deleted on disk.
-    "close_on_file_delete": false,
+    "close_on_file_delete": true,
     // Relative size of the drop target in the editor that will open dropped file as a split pane (0-0.5)
     // E.g. 0.25 == If you drop onto the top/bottom quarter of the pane a new vertical split will be used
     //              If you drop onto the left/right quarter of the pane a new horizontal split will be used
@@ -427,7 +427,7 @@
         // Whether to show cursor positions in the scrollbar.
         "cursors": true,
         // Whether to show git diff indicators in the scrollbar.
-        "git_diff": true,
+        "git_diff": false,
         // Whether to show buffer search results in the scrollbar.
         "search_results": true,
         // Whether to show selected text occurrences in the scrollbar.
@@ -440,7 +440,7 @@
         //  - "warning": show only errors and warnings
         //  - "information": show only errors, warnings, and information
         //  - "all" or true: show all diagnostics
-        "diagnostics": "all",
+        "diagnostics": "warning",
         // Forcefully enable or disable the scrollbar for each axis
         "axes": {
             // When false, forcefully disables the horizontal scrollbar. Otherwise, obey other settings.
@@ -451,15 +451,13 @@
     },
     // Minimap related settings
     "minimap": {
-        "show": "always",
+        "show": "auto",
         "display_in": "active_editor",
         "thumb": "always",
         "thumb_border": "left_open",
         "current_line_highlight": "all",
         "max_width_columns": 120
     },
-    // Enable middle-click paste on Linux.
-    "middle_click_paste": true,
     // What to do when multibuffer is double clicked in some of its excerpts
     // (parts of singleton buffers).
     // May take 2 values:
@@ -471,8 +469,8 @@
     "double_click_in_multibuffer": "select",
     "gutter": {
         "line_numbers": true,
-        "runnables": true,
-        "breakpoints": true,
+        "runnables": false,
+        "breakpoints": false,
         "folds": true,
         "min_line_number_digits": 4
     },
@@ -488,7 +486,7 @@
     // The number of lines to keep above/below the cursor when scrolling with the keyboard
     "vertical_scroll_margin": 20.0,
     // Whether to scroll when clicking near the edge of the visible text area.
-    "autoscroll_on_clicks": false,
+    "autoscroll_on_clicks": true,
     // The number of characters to keep on either side when scrolling with the mouse
     "horizontal_scroll_margin": 5,
     // Scroll sensitivity multiplier. This multiplier is applied
@@ -530,7 +528,7 @@
         "show_parameter_hints": true,
         "show_value_hints": true,
         "show_other_hints": true,
-        "show_background": false,
+        "show_background": true,
         "edit_debounce_ms": 200,
         "scroll_debounce_ms": 50,
         "toggle_on_modifiers_press": {
@@ -648,7 +646,7 @@
         "default_view": "thread",
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-sonnet-4"
+            "model": "claude-sonnet-4.5"
         },
         "model_parameters": [],
         "always_allow_tool_actions": false,
@@ -710,7 +708,7 @@
         "message_editor_min_lines": 4
     },
     // Whether the screen sharing icon is shown in the os status bar.
-    "show_call_status_icon": true,
+    "show_call_status_icon": false,
     // Whether to use language servers to provide code intelligence.
     "enable_language_server": true,
     // Whether to perform linked edits of associated ranges, if the language server supports it.
@@ -749,10 +747,10 @@
     "tabs": {
         "git_status": true,
         "close_position": "right",
-        "file_icons": false,
+        "file_icons": true,
         "show_close_button": "hidden",
         "activate_on_close": "history",
-        "show_diagnostics": "off"
+        "show_diagnostics": "errors"
     },
     // Settings related to preview tabs.
     "preview_tabs": {
@@ -857,13 +855,13 @@
     "debuggers": [],
     // Control what info is collected by Zed.
     "telemetry": {
-        "diagnostics": false,
-        "metrics": false
+        "diagnostics": true,
+        "metrics": true
     },
     // Whether to disable all AI features in Zed.
     //
     // Default: false
-    "disable_ai": false,
+    "disable_ai": true,
     // Automatically update Zed. This setting may be ignored on Linux if
     // installed through a package manager.
     "auto_update": true,
@@ -897,7 +895,7 @@
         // Settings for inline diagnostics
         "inline": {
             // Whether to show diagnostics inline or not
-            "enabled": false,
+            "enabled": true,
             // The delay in milliseconds to show inline diagnostics after the
             // last diagnostic update.
             "update_debounce_ms": 150,
@@ -925,7 +923,10 @@
         "**/.DS_Store",
         "**/Thumbs.db",
         "**/.classpath",
-        "**/.settings"
+        "**/node_modules",
+        "**/.next",
+        "**/zed/conversations",
+        "**/zed/prompts"
     ],
     // Files or globs of files that will be included by Zed, even when ignored by git. This is useful
     // for files that are not tracked by git, but are still important to your project. Note that globs
@@ -933,8 +934,8 @@
     // precedence over these inclusions.
     "file_scan_inclusions": [
         "/Users/risenowrise/cc/**",
-        "/Users/risenowrise/vx/**",
-        "/Users/risenowrise/v/**"
+        "/Users/risenowrise/v/**",
+        "/Users/risenowrise/vx/**"
     ],
     // Git gutter behavior configuration.
     "git": {
@@ -947,7 +948,7 @@
         // Control whether the git blame information is shown inline,
         // in the currently focused line.
         "inline_blame": {
-            "enabled": true,
+            "enabled": false,
             // Sets a delay after which the inline blame information is shown.
             // Delay is restarted with every cursor movement.
             "delay_ms": 0,
@@ -955,7 +956,7 @@
             // of the inline blame in units of em widths.
             "padding": 7,
             // Whether or not to display the git commit summary on the same line.
-            "show_commit_summary": false,
+            "show_commit_summary": true,
             // The minimum column number to show the inline blame information at
             "min_column": 0
         },
@@ -1013,12 +1014,12 @@
     // Settings specific to journaling
     "journal": {
         // The path of the directory where journal entries are stored
-        "path": "~",
+        "path": "$ZED/journal",
         // What format to display the hours in
         // May take 2 values:
         // 1. hour12
         // 2. hour24
-        "hour_format": "hour12"
+        "hour_format": "hour24"
     },
     // Status bar-related settings.
     "status_bar": {
@@ -1045,23 +1046,12 @@
         "line_height": {
             "custom": 1.15
         },
-        "detect_venv": {
-            "on": {
-                "directories": [
-                    ".env",
-                    "env",
-                    ".venv",
-                    "venv"
-                ],
-                "activate_script": "default"
-            }
-        },
         "toolbar": {
             "breadcrumbs": false
         },
         "font_family": "JetBrainsMono Nerd Font",
         "font_size": 11.0,
-        "font_weight": 400,
+        "font_weight": 100,
         "max_scroll_history_lines": 10000,
         "minimum_contrast": 45
     },
@@ -1102,7 +1092,6 @@
             "*{*.env}"
         ],
         "css": [
-            "$THEME/vs-custom.css",
             "*.css"
         ],
         "ignore": [
@@ -1110,9 +1099,10 @@
             ".gitignore",
             ".getcode"
         ],
-        "plaintext": [
-            "defaults.*",
-            "*.txt"
+        "Markdown": [
+            "*.txt",
+            "*.md",
+            "*.mdx"
         ],
         "jsonc": [
             "*{.json,.jsonc,*.windsurf.json}"
@@ -1122,7 +1112,7 @@
         ],
         "toml": [
             "*.toml",
-            "config"
+            "**/ghostty/config"
         ],
         "shellscript": [
             "*{.zsh,.env.zsh}",
@@ -1430,6 +1420,7 @@
     //   "W": "workspace::Save"
     // }
     "command_aliases": {},
+    // #WOW: i fucking love this! TODO: Implement
     // ssh_connections is an array of ssh connections.
     // You can configure these from `project: Open Remote` in the command palette.
     // Zed's ssh support will pull configuration from your ~/.ssh too.
