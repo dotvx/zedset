@@ -38,4 +38,4 @@ while IFS= read -r line || [ -n "$line" ]; do
         # Simple prefix/suffix
         echo "${PREFIX}${line}${SUFFIX}"
     fi
-done <<< "$ZED_SELECTED_TEXT" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+done <<< "$ZED_SELECTED_TEXT" | curl -X POST -d @- http://localhost:8888/paste -s

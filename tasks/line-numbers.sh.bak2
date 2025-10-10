@@ -12,8 +12,8 @@ done
 
 if [ $REMOVE -eq 1 ]; then
     # Remove line numbers (strip leading digits and spaces)
-    printf '%s\n' "$ZED_SELECTED_TEXT" | sed -E 's/^[[:space:]]*[0-9]+[[:space:]]+//' | curl -X POST --data-binary @- http://localhost:8888/paste -s
+    printf '%s\n' "$ZED_SELECTED_TEXT" | sed -E 's/^[[:space:]]*[0-9]+[[:space:]]+//' | curl -X POST -d @- http://localhost:8888/paste -s
 else
     # Add line numbers
-    printf '%s\n' "$ZED_SELECTED_TEXT" | nl -ba -w1 -s'. ' | curl -X POST --data-binary @- http://localhost:8888/paste -s
+    printf '%s\n' "$ZED_SELECTED_TEXT" | nl -ba -w1 -s'. ' | curl -X POST -d @- http://localhost:8888/paste -s
 fi

@@ -12,4 +12,4 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Use fold to wrap text
-printf '%s\n' "$ZED_SELECTED_TEXT" | fold -s -w "$WIDTH" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+printf '%s\n' "$ZED_SELECTED_TEXT" | fold -s -w "$WIDTH" | curl -X POST -d @- http://localhost:8888/paste -s

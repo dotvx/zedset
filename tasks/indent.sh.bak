@@ -18,22 +18,22 @@ done
 case "$MODE" in
     tabs)
         # Convert spaces to tabs (assume 4 spaces = 1 tab)
-        printf '%s\n' "$ZED_SELECTED_TEXT" | sed 's/    /\t/g' | curl -X POST --data-binary @- http://localhost:8888/paste -s
+        printf '%s' "$ZED_SELECTED_TEXT" | sed 's/    /\t/g' | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     spaces)
         # Convert tabs to spaces
-        printf '%s\n' "$ZED_SELECTED_TEXT" | expand -t "$SPACES" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+        printf '%s' "$ZED_SELECTED_TEXT" | expand -t "$SPACES" | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     indent)
         # Add indent
         indent_str=$(printf "%${SPACES}s" | tr ' ' ' ')
-        printf '%s\n' "$ZED_SELECTED_TEXT" | sed "s/^/$indent_str/" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+        printf '%s' "$ZED_SELECTED_TEXT" | sed "s/^/$indent_str/" | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     dedent)
         # Remove indent
-        printf '%s\n' "$ZED_SELECTED_TEXT" | sed "s/^\\s\\{1,$SPACES\\}//" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+        printf '%s' "$ZED_SELECTED_TEXT" | sed "s/^\\s\\{1,$SPACES\\}//" | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
     *)
-        printf '%s\n' "$ZED_SELECTED_TEXT" | curl -X POST --data-binary @- http://localhost:8888/paste -s
+        printf '%s' "$ZED_SELECTED_TEXT" | curl -X POST -d @- http://localhost:8888/paste -s
         ;;
 esac
