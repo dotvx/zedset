@@ -380,7 +380,7 @@
     // Toolbar related settings
     "toolbar": {
         // Whether to show breadcrumbs.
-        "breadcrumbs": false,
+        "breadcrumbs": true,
         // Whether to show quick action buttons.
         "quick_actions": false,
         // Whether to show the Selections menu in the editor toolbar.

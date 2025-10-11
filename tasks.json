@@ -349,15 +349,55 @@
         "hide": "on_success"
     },
     {
-        "label": "\ud83d\udcca Align CSV",
-        "command": "$ZED/tasks/align-csv.sh",
+        "label": "\ud83d\udcca Markdown Table (auto-detect: , | ;)",
+        "command": "$ZED/tasks/align-csv-table.sh",
         "use_new_terminal": false,
         "reveal": "never",
         "hide": "on_success"
     },
     {
-        "label": "\ud83d\udcca Align CSV (Markdown Table)",
-        "command": "$ZED/tasks/align-csv-table.sh",
+        "label": "\ud83d\udcca Align by Regex (Custom)",
+        "command": "$ZED/tasks/align-regex.sh",
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align by = (equals)",
+        "command": "$ZED/tasks/align-regex.sh",
+        "args": [
+            "="
+        ],
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align by : (colon)",
+        "command": "$ZED/tasks/align-regex.sh",
+        "args": [
+            ":"
+        ],
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align by , (comma)",
+        "command": "$ZED/tasks/align-regex.sh",
+        "args": [
+            ","
+        ],
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align by \\s+ (whitespace)",
+        "command": "$ZED/tasks/align-regex.sh",
+        "args": [
+            "\\s+"
+        ],
         "use_new_terminal": false,
         "reveal": "never",
         "hide": "on_success"

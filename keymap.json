@@ -28,10 +28,30 @@
             "ctrl-%": "zed::OpenDefaultSettings",
             "ctrl-^": "zed::OpenTasks",
             "ctrl-&": "zed::Extensions",
-            "ctrl-(": ["task::Spawn", { "task_name": "Open Themes" }],
-            "ctrl-)": ["task::Spawn", { "task_name": "Open Ghostty Config" }],
-            "ctrl-_": ["task::Spawn", { "task_name": "Open Infra YAML" }],
-            "ctrl-+": ["task::Spawn", { "task_name": "Open Fish Config" }]
+            "ctrl-(": [
+                "task::Spawn",
+                {
+                    "task_name": "Open Themes"
+                }
+            ],
+            "ctrl-)": [
+                "task::Spawn",
+                {
+                    "task_name": "Open Ghostty Config"
+                }
+            ],
+            "ctrl-_": [
+                "task::Spawn",
+                {
+                    "task_name": "Open Infra YAML"
+                }
+            ],
+            "ctrl-+": [
+                "task::Spawn",
+                {
+                    "task_name": "Open Fish Config"
+                }
+            ]
         }
     },
     {
@@ -88,14 +108,19 @@
         }
     },
     {
-      "bindings": {
-        "cmd-shift-d": "workspace::NewFileSplitHorizontal"
-      }
+        "bindings": {
+            "cmd-shift-d": "workspace::NewFileSplitHorizontal"
+        }
     },
     {
-      "context": "Editor",
-      "bindings": {
-        "alt-`": "editor::MoveToEnclosingBracket"
-      }
+        "context": "Editor",
+        "bindings": {
+            "alt-`": "editor::MoveToEnclosingBracket"
+        }
+    },
+    {
+        "bindings": {
+            "alt-f": "editor::FormatSelections"
+        }
     }
 ]
