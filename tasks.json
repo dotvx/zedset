@@ -74,14 +74,14 @@
         "hide": "on_success"
     },
     {
-        "label": "\u232b Duplicate Lines (keep first)",
+        "label": "\ud83e\udd47 Remove Duplicate Lines",
         "command": "$ZED/tasks/rm-duplicate-lines.sh",
         "use_new_terminal": false,
         "reveal": "never",
         "hide": "on_success"
     },
     {
-        "label": "\u232b Duplicate Lines (keep last)",
+        "label": "\ud83e\udd48 Remove Duplicate Lines (\u2b06\ufe0e Keep Last)",
         "command": "$ZED/tasks/rm-duplicate-lines.sh",
         "args": [
             "--last"
@@ -344,6 +344,20 @@
     {
         "label": "\ud83d\udd24 Sort JSON Keys",
         "command": "$ZED/tasks/sort-json.sh",
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align CSV",
+        "command": "$ZED/tasks/align-csv.sh",
+        "use_new_terminal": false,
+        "reveal": "never",
+        "hide": "on_success"
+    },
+    {
+        "label": "\ud83d\udcca Align CSV (Markdown Table)",
+        "command": "$ZED/tasks/align-csv-table.sh",
         "use_new_terminal": false,
         "reveal": "never",
         "hide": "on_success"

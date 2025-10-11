@@ -14,7 +14,7 @@
         "bindings": {
             "shift shift": "editor::ToggleFold",
             "cmd-d": "workspace::NewFileSplitVertical",
-            "alt-a": "search::SelectPreviousMatch",
+            "alt-u a": "search::SelectPreviousMatch",
             "alt-d": "search::SelectNextMatch",
             "alt-x": "editor::DeleteLine"
         }
