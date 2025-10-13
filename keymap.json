@@ -14,7 +14,7 @@
         "bindings": {
             "shift shift": "editor::ToggleFold",
             "cmd-d": "workspace::NewFileSplitVertical",
-            "alt-u a": "search::SelectPreviousMatch",
+            "alt-a": "search::SelectPreviousMatch",
             "alt-d": "search::SelectNextMatch",
             "alt-x": "editor::DeleteLine"
         }
@@ -209,5 +209,43 @@
             "cmd-b": "workspace::ToggleLeftDock",
             "cmd-escape": "workspace::ToggleLeftDock"
         }
+    },
+    {
+        "bindings": {
+            "ctrl-cmd-f": "search::CycleMode"
+        }
+    },
+    {
+        "context": "BufferSearchBar",
+        "bindings": {
+            "cmd-f": "search::ToggleReplace"
+        }
+    },
+    {
+        "bindings": {
+            "ctrl-alt-cmd-f": null
+        }
+    },
+    {
+        "context": "BufferSearchBar",
+        "bindings": {
+            "alt-cmd-f": null
+        }
+    },
+    {
+        "context": "BufferSearchBar",
+        "bindings": {
+            "alt-cmd-f": "search::ToggleSelection"
+        }
+    },
+    {
+      "bindings": {
+        "fn-f": null
+      }
+    },
+    {
+      "bindings": {
+        "ctrl-cmd-f": null
+      }
     }
 ]
