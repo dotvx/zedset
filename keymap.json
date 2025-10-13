@@ -197,5 +197,16 @@
       "bindings": {
         "cmd-k shift-p": "dev::OpenSyntaxTreeView"
       }
+    },
+    {
+      "bindings": {
+        "cmd-`": "editor::ToggleMinimap"
+      }
+    },
+    {
+      "context": "Workspace",
+      "bindings": {
+        "cmd-escape": "workspace::ToggleLeftDock"
+      }
     }
 ]
