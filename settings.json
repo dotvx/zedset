@@ -70,7 +70,7 @@
         "calt": true
     },
     // The weight of the UI font in standard CSS units from 100 to 900.
-    "ui_font_weight": 200,
+    "ui_font_weight": 400,
     // The default font size for text in the UI
     "ui_font_size": 14,
     // The default font size for text in the agent panel. Falls back to the UI font size if unset.
@@ -349,7 +349,7 @@
     "allow_rewrap": "in_comments",
     // Controls whether edit predictions are shown immediately (true)
     // or manually by triggering `editor::ShowEditPrediction` (false).
-    "show_edit_predictions": false,
+    "show_edit_predictions": true,
     // Controls whether edit predictions are shown in a given language scope.
     // Example: ["string", "comment"]
     "edit_predictions_disabled_in": [],
@@ -405,9 +405,9 @@
         // Whether to show user picture in the titlebar.
         "show_user_picture": false,
         // Whether to show the sign in button in the titlebar.
-        "show_sign_in": false,
+        "show_sign_in": true,
         // Whether to show the menus in the titlebar.
-        "show_menus": false
+        "show_menus": true
     },
     // Scrollbar related settings
     "scrollbar": {
@@ -556,7 +556,7 @@
         "indent_size": 20,
         "auto_reveal_entries": true,
         "starts_open": true,
-        "auto_fold_dirs": true,
+        "auto_fold_dirs": false,
         "scrollbar": {
             "show": null
         },
@@ -569,7 +569,7 @@
         "hide_root": false
     },
     "outline_panel": {
-        "button": false,
+        "button": true,
         "default_width": 300,
         "dock": "right",
         "file_icons": true,
@@ -610,7 +610,7 @@
         // Whether to sort entries in the panel by path or by status (the default).
         //
         // Default: false
-        "sort_by_path": false,
+        "sort_by_path": true,
         // Whether to collapse untracked files in the diff panel.
         //
         // Default: false
@@ -630,23 +630,23 @@
     },
     "notification_panel": {
         // Whether to show the notification panel button in the status bar.
-        "button": false,
+        "button": true,
         // Where to dock the notification panel. Can be 'left' or 'right'.
         "dock": "right",
         // Default width of the notification panel.
         "default_width": 380
     },
     "agent": {
-        "enabled": false,
+        "enabled": true,
         "preferred_completion_mode": "normal",
-        "button": false,
+        "button": true,
         "dock": "right",
         "default_width": 640,
         "default_height": 320,
-        "default_view": "thread",
+        "default_view": "text_thread",
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-sonnet-4.5"
+            "model": ""
         },
         "model_parameters": [],
         "always_allow_tool_actions": false,
@@ -703,7 +703,7 @@
         "notify_when_agent_waiting": "primary_screen",
         "play_sound_when_agent_done": true,
         "expand_edit_card": true,
-        "expand_terminal_card": false,
+        "expand_terminal_card": true,
         "use_modifier_to_send": false,
         "message_editor_min_lines": 4
     },
@@ -1107,12 +1107,10 @@
         "jsonc": [
             "*{.json,.jsonc,*.windsurf.json}"
         ],
-        "properties": [
-            "**/osx/custom-*.txt"
-        ],
         "toml": [
             "*.toml",
-            "**/ghostty/config"
+            "/Users/risenowrise/v/ghostty/config",
+            "/Users/risenowrise/v/ghostty/themes/*.txt"
         ],
         "shellscript": [
             "*{.zsh,.env.zsh}",
@@ -1151,15 +1149,12 @@
     //
     // If you don't want any of these extensions, add this field to your settings
     // and change the value to `false`.
-    "auto_install_extensions": {
-        "html": true
-    },
     // Controls how completions are processed for this language.
     "completions": {
-        "words": "enabled",
+        "words": "disabled",
         "words_min_length": 5,
         "lsp": true,
-        "lsp_fetch_timeout_ms": 5000,
+        "lsp_fetch_timeout_ms": 0,
         "lsp_insert_mode": "replace_suffix"
     },
     // Different settings for specific languages.
@@ -1371,7 +1366,7 @@
     },
     // The server to connect to. If the environment variable
     // ZED_SERVER_URL is set, it will override this setting.
-    "server_url": "https: //zed.dev",
+    "server_url": "https://zed.dev",
     // Settings overrides to use when using Zed Preview.
     // Mostly useful for developers who are managing multiple instances of Zed.
     "preview": {
