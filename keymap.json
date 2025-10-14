@@ -247,5 +247,11 @@
       "bindings": {
         "ctrl-cmd-f": null
       }
+    },
+    {
+      "context": "ProjectPanel",
+      "bindings": {
+        "escape": "project_panel::CollapseAllEntries"
+      }
     }
 ]
