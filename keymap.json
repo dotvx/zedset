@@ -23,24 +23,24 @@
         "bindings": {
             "ctrl-!": "zed::OpenKeymap",
             "ctrl-@": "zed::OpenKeymapFile",
-            "ctrl-#": "zed::OpenDefaultKeymap",
-            "ctrl-$": "zed::OpenSettings",
-            "ctrl-%": "zed::OpenSettingsFile",
-            "ctrl-^": "zed::OpenDefaultSettings",
-            "ctrl-&": [
+            "ctrl-#": "zed::OpenSettings",
+            "ctrl-$": "zed::OpenSettingsFile",
+            "ctrl-%": [
                 "task::Spawn",
                 {
                     "task_name": "Open Themes"
                 }
             ],
-            "ctrl-&": "zed::Extensions",
-            "ctrl-)": [
+            "ctrl-^": [
                 "task::Spawn",
                 {
                     "task_name": "Open Configs"
                 }
             ],
-            "ctrl-^": "zed::OpenTasks"
+            "ctrl-)": "zed::OpenTasks",
+            "ctrl-)": "zed::Extensions",
+            "ctrl-_": "zed::OpenDefaultKeymap",
+            "ctrl-+": "zed::OpenDefaultSettings"
         }
     },
     {
