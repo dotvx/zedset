@@ -500,32 +500,12 @@
         "hide": "on_success"
     },
     {
-        "label": "Open Ghostty Config",
+        "label": "Open Configs",
         "command": "zed",
         "args": [
             "--add",
-            "$GHOST/config"
-        ],
-        "use_new_terminal": false,
-        "reveal": "never",
-        "hide": "on_success"
-    },
-    {
-        "label": "Open Infra YAML",
-        "command": "zed",
-        "args": [
-            "--add",
-            "$F/infra.yaml"
-        ],
-        "use_new_terminal": false,
-        "reveal": "never",
-        "hide": "on_success"
-    },
-    {
-        "label": "Open Fish Config",
-        "command": "zed",
-        "args": [
-            "--add",
+            "$GHOST/config",
+            "$F/infra.yaml",
             "$F/config.fish"
         ],
         "use_new_terminal": false,

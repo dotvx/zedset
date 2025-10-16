@@ -21,37 +21,26 @@
     },
     {
         "bindings": {
-            "ctrl-!": "zed::OpenKeymapEditor",
-            "ctrl-@": "zed::OpenKeymap",
+            "ctrl-!": "zed::OpenKeymap",
+            "ctrl-@": "zed::OpenKeymapFile",
             "ctrl-#": "zed::OpenDefaultKeymap",
             "ctrl-$": "zed::OpenSettings",
-            "ctrl-%": "zed::OpenDefaultSettings",
-            "ctrl-^": "zed::OpenTasks",
-            "ctrl-&": "zed::Extensions",
-            "ctrl-(": [
+            "ctrl-%": "zed::OpenSettingsFile",
+            "ctrl-^": "zed::OpenDefaultSettings",
+            "ctrl-&": [
                 "task::Spawn",
                 {
                     "task_name": "Open Themes"
                 }
             ],
+            "ctrl-&": "zed::Extensions",
             "ctrl-)": [
                 "task::Spawn",
                 {
-                    "task_name": "Open Ghostty Config"
+                    "task_name": "Open Configs"
                 }
             ],
-            "ctrl-_": [
-                "task::Spawn",
-                {
-                    "task_name": "Open Infra YAML"
-                }
-            ],
-            "ctrl-+": [
-                "task::Spawn",
-                {
-                    "task_name": "Open Fish Config"
-                }
-            ]
+            "ctrl-^": "zed::OpenTasks"
         }
     },
     {
@@ -239,19 +228,19 @@
         }
     },
     {
-      "bindings": {
-        "fn-f": null
-      }
+        "bindings": {
+            "fn-f": null
+        }
     },
     {
-      "bindings": {
-        "ctrl-cmd-f": null
-      }
+        "bindings": {
+            "ctrl-cmd-f": null
+        }
     },
     {
-      "context": "ProjectPanel",
-      "bindings": {
-        "escape": "project_panel::CollapseAllEntries"
-      }
+        "context": "ProjectPanel",
+        "bindings": {
+            "escape": "project_panel::CollapseAllEntries"
+        }
     }
 ]
