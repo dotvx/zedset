@@ -242,5 +242,11 @@
         "bindings": {
             "escape": "project_panel::CollapseAllEntries"
         }
+    },
+    {
+      "context": "Workspace",
+      "bindings": {
+        "cmd-5": null
+      }
     }
 ]
