@@ -10,7 +10,7 @@
     // - "dark": Use the theme indicated by the "dark" field
     "theme": {
         "mode": "system",
-        "light": "Alabaster BG",
+        "light": "VX Desert Iced Latte (Blur)",
         "dark": "VX Desert Mocha (Blur) [Light]"
     },
     "icon_theme": "Soft Charmed Icons",
@@ -74,7 +74,7 @@
     // The default font size for text in the UI
     "ui_font_size": 14,
     // The default font size for text in the agent panel. Falls back to the UI font size if unset.
-    "agent_font_size": null,
+    "agent_ui_font_size": null,
     // How much to fade out unused code.
     "unnecessary_code_fade": 0.3,
     // Active pane styling settings.
@@ -1055,7 +1055,6 @@
         "max_scroll_history_lines": 10000,
         "minimum_contrast": 45
     },
-    "code_actions_on_format": {},
     // Settings related to running tasks.
     "tasks": {
         "variables": {},
@@ -1189,9 +1188,11 @@
             "preferred_line_length": 72
         },
         "Go": {
-            "code_actions_on_format": {
-                "source.organizeImports": true
-            },
+            "formatter": [
+                {
+                    "code_action": "source.organizeImports"
+                }
+            ],
             "debuggers": [
                 "Delve"
             ]

@@ -1188,11 +1188,9 @@
             "preferred_line_length": 72
         },
         "Go": {
-            "formatter": [
-                {
-                    "code_action": "source.organizeImports"
-                }
-            ],
+            "code_actions_on_format": {
+                "source.organizeImports": true
+            },
             "debuggers": [
                 "Delve"
             ]
