@@ -11,7 +11,7 @@
     "theme": {
         "mode": "system",
         "light": "Alabaster BG",
-        "dark": "VX Desert Mocha Dark (Blur Heavy)"
+        "dark": "VX Desert Mocha Solid"
     },
     "icon_theme": "Soft Charmed Icons",
     // The name of a base set of key bindings to use.
