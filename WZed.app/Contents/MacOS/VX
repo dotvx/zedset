@@ -1,0 +1,21 @@
+#!/opt/homebrew/bin/fish
+
+# VX - Launch Zed with ~/v directory
+
+# Try homebrew zed first, fallback to /usr/local/bin
+set zed_path ""
+for path in /opt/homebrew/bin/zed /usr/local/bin/zed
+    if test -x $path
+        set zed_path $path
+        break
+    end
+end
+
+if test -z "$zed_path"
+    echo "Error: zed not found" >> ~/.vx_error.log
+    exit 1
+end
+
+# Launch zed with ~/v directory
+$zed_path --add ~/v &>/dev/null && $zed_path --add ~/claude &>/dev/null &
+disown
