@@ -8,11 +8,7 @@
     // - "system": Use the theme that corresponds to the system's appearance
     // - "light": Use the theme indicated by the "light" field
     // - "dark": Use the theme indicated by the "dark" field
-    "theme": {
-        "mode": "system",
-        "light": "VX Desert Iced Latte (Blur)",
-        "dark": "VX Desert Mocha (Blur) [Light]"
-    },
+    "theme": "Carbonfox - blurred",
     "icon_theme": "Soft Charmed Icons",
     // The name of a base set of key bindings to use.
     // This setting can take six values, each named after another
@@ -1188,11 +1184,9 @@
             "preferred_line_length": 72
         },
         "Go": {
-            "formatter": [
-                {
-                    "code_action": "source.organizeImports"
-                }
-            ],
+            "code_actions_on_format": {
+                "source.organizeImports": true
+            },
             "debuggers": [
                 "Delve"
             ]
