@@ -8,7 +8,7 @@
     // - "system": Use the theme that corresponds to the system's appearance
     // - "light": Use the theme indicated by the "light" field
     // - "dark": Use the theme indicated by the "dark" field
-    "theme": "Carbonfox - blurred",
+    "theme": "Yue Newmoon",
     "icon_theme": "Soft Charmed Icons",
     // The name of a base set of key bindings to use.
     // This setting can take six values, each named after another
@@ -20,7 +20,7 @@
     // 4. "None"
     // 5. "SublimeText"
     // 6. "TextMate"
-    "base_keymap": "Cursor",
+    "base_keymap": "VSCode",
     // Features that can be globally enabled or disabled
     "features": {
         "edit_prediction_provider": "zed"
