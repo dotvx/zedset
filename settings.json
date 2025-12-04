@@ -8,8 +8,16 @@
     // - "system": Use the theme that corresponds to the system's appearance
     // - "light": Use the theme indicated by the "light" field
     // - "dark": Use the theme indicated by the "dark" field
-    "theme": "Yue Newmoon",
-    "icon_theme": "Soft Charmed Icons",
+    "theme": {
+        "mode": "system",
+        "light": "Github Light High Contrast",
+        "dark": "VX Desert Mocha Dark (Solid)"
+    },
+    "icon_theme": {
+        "mode": "system",
+        "light": "Soft Charmed Icons",
+        "dark": "Soft Charmed Icons"
+    },
     // The name of a base set of key bindings to use.
     // This setting can take six values, each named after another
     // text editor:
@@ -129,7 +137,7 @@
     //         "restore_on_startup": "last_workspace",
     //  3. Do not restore previous workspaces
     //         "restore_on_startup": "none",
-    "restore_on_startup": "last_session",
+    "restore_on_startup": "last_workspace",
     // Whether to attempt to restore previous file's state when opening it again.
     // The state is stored per pane.
     // When disabled, defaults are applied instead of the state restoration.
@@ -153,14 +161,14 @@
     //         "when_closing_with_no_tabs": "close_window",
     //  3. Never close the window
     //         "when_closing_with_no_tabs": "keep_window_open",
-    "when_closing_with_no_tabs": "platform_default",
+    "when_closing_with_no_tabs": "close_window",
     // What to do when the last window is closed.
     // May take 2 values:
     //  1. Use the current platform's convention
     //         "on_last_window_closed": "platform_default"
     //  2. Always quit the application
     //         "on_last_window_closed": "quit_app",
-    "on_last_window_closed": "platform_default",
+    "on_last_window_closed": "quit_app",
     // Whether to show padding for zoomed panels.
     // When enabled, zoomed center panels (e.g. code editor) will have padding all around,
     // while zoomed bottom/left/right panels will have padding to the top/right/left (respectively).
@@ -282,7 +290,7 @@
     //  - "info"
     //  - "hint"
     //  - "all" — allow all diagnostics (default)
-    "diagnostics_max_severity": "off",
+    "diagnostics_max_severity": "warning",
     // Whether to show wrap guides (vertical rulers) in the editor.
     // Setting this to true will show a guide at the 'preferred_line_length' value
     // if 'soft_wrap' is set to 'preferred_line_length', and will show any
@@ -380,11 +388,11 @@
         // Whether to show quick action buttons.
         "quick_actions": false,
         // Whether to show the Selections menu in the editor toolbar.
-        "selections_menu": false,
+        "selections_menu": true,
         // Whether to show agent review buttons in the editor toolbar.
-        "agent_review": false,
+        "agent_review": true,
         // Whether to show code action buttons in the editor toolbar.
-        "code_actions": false
+        "code_actions": true
     },
     // Whether to allow windows to tab together based on the user’s tabbing preference (macOS only).
     "use_system_window_tabs": true,
@@ -401,7 +409,7 @@
         // Whether to show user picture in the titlebar.
         "show_user_picture": false,
         // Whether to show the sign in button in the titlebar.
-        "show_sign_in": true,
+        "show_sign_in": false,
         // Whether to show the menus in the titlebar.
         "show_menus": true
     },
@@ -423,7 +431,7 @@
         // Whether to show cursor positions in the scrollbar.
         "cursors": true,
         // Whether to show git diff indicators in the scrollbar.
-        "git_diff": false,
+        "git_diff": true,
         // Whether to show buffer search results in the scrollbar.
         "search_results": true,
         // Whether to show selected text occurrences in the scrollbar.
@@ -494,7 +502,7 @@
     "fast_scroll_sensitivity": 16.0,
     "relative_line_numbers": "disabled",
     // If 'search_wrap' is disabled, search result do not wrap around the end of the file.
-    "search_wrap": true,
+    "search_wrap": false,
     // Search options to enable by default when opening new project and buffer searches.
     "search": {
         "button": false,
@@ -646,7 +654,6 @@
         },
         "model_parameters": [],
         "always_allow_tool_actions": false,
-        "stream_edits": false,
         "single_file_review": true,
         "enable_feedback": true,
         "default_profile": "write",
@@ -805,10 +812,10 @@
     "extend_comment_on_newline": true,
     // Removes any lines containing only whitespace at the end of the file and
     // ensures just one newline at the end.
-    "ensure_final_newline_on_save": true,
+    "ensure_final_newline_on_save": false,
     // Whether or not to perform a buffer format before saving: [on, off, prettier, language_server]
     // Keep in mind, if the autosave with delay is enabled, format_on_save will be ignored
-    "format_on_save": "on",
+    "format_on_save": "off",
     // How to perform a buffer format. This setting can take 4 values:
     //
     // 1. Format code using the current language server:
@@ -851,8 +858,8 @@
     "debuggers": [],
     // Control what info is collected by Zed.
     "telemetry": {
-        "diagnostics": true,
-        "metrics": true
+        "diagnostics": false,
+        "metrics": false
     },
     // Whether to disable all AI features in Zed.
     //
@@ -860,7 +867,7 @@
     "disable_ai": false,
     // Automatically update Zed. This setting may be ignored on Linux if
     // installed through a package manager.
-    "auto_update": true,
+    "auto_update": false,
     // How to render LSP `textDocument/documentColor` colors in the editor.
     //
     // Possible values:
@@ -920,6 +927,7 @@
         "**/Thumbs.db",
         "**/.classpath",
         "**/node_modules",
+        "**/.vercel/output",
         "**/.next",
         "**/zed/conversations",
         "**/zed/prompts"
@@ -929,9 +937,7 @@
     // that are overly broad can slow down Zed's file scanning. `file_scan_exclusions` takes
     // precedence over these inclusions.
     "file_scan_inclusions": [
-        "/Users/risenowrise/cc/**",
-        "/Users/risenowrise/v/**",
-        "/Users/risenowrise/vx/**"
+        "/Users/risenowrise/v/**"
     ],
     // Git gutter behavior configuration.
     "git": {
@@ -957,11 +963,11 @@
             "min_column": 0
         },
         "blame": {
-            "show_avatar": true
+            "show_avatar": false
         },
         // Control which information is shown in the branch picker.
         "branch_picker": {
-            "show_author_name": true
+            "show_author_name": false
         },
         // How git hunks are displayed visually in the editor.
         // This setting can take two values:
@@ -1040,12 +1046,12 @@
         "button": false,
         "env": {},
         "line_height": {
-            "custom": 1.15
+            "custom": 1.35
         },
         "toolbar": {
-            "breadcrumbs": false
+            "breadcrumbs": true
         },
-        "font_family": "JetBrainsMono Nerd Font",
+        "font_family": "JetBrainsMono Nerd Font Mono",
         "font_size": 11.0,
         "font_weight": 100,
         "max_scroll_history_lines": 10000,
@@ -1264,8 +1270,9 @@
             }
         },
         "YAML": {
+            "tab_size": 2,
             "prettier": {
-                "allowed": true
+                "allowed": false
             }
         }
     },

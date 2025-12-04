@@ -12,19 +12,19 @@
     {
         "context": "Editor",
         "bindings": {
-            "shift shift": "editor::ToggleFold",
+            "ctrl-alt-\\": "editor::ToggleFold",
             "cmd-d": "workspace::NewFileSplitVertical",
-            "alt-u a": "search::SelectPreviousMatch",
+            "alt-a": "search::SelectPreviousMatch",
             "alt-d": "search::SelectNextMatch",
             "alt-x": "editor::DeleteLine"
         }
     },
     {
         "bindings": {
-            "ctrl-!": "zed::OpenKeymap",
-            "ctrl-@": "zed::OpenKeymapFile",
-            "ctrl-#": "zed::OpenSettings",
-            "ctrl-$": "zed::OpenSettingsFile",
+            "ctrl-@": "zed::OpenKeymap",
+            "ctrl-$": "zed::OpenKeymapFile",
+            "ctrl-!": "zed::OpenSettings",
+            "ctrl-#": "zed::OpenSettingsFile",
             "ctrl-%": [
                 "task::Spawn",
                 {
@@ -38,7 +38,7 @@
                 }
             ],
             "ctrl-)": "zed::OpenTasks",
-            "ctrl-)": "zed::Extensions",
+            "ctrl-": "zed::Extensions",
             "ctrl-_": "zed::OpenDefaultKeymap",
             "ctrl-+": "zed::OpenDefaultSettings"
         }
@@ -200,11 +200,6 @@
         }
     },
     {
-        "bindings": {
-            "ctrl-cmd-f": "search::CycleMode"
-        }
-    },
-    {
         "context": "BufferSearchBar",
         "bindings": {
             "cmd-f": "search::ToggleReplace"
@@ -219,12 +214,6 @@
         "context": "BufferSearchBar",
         "bindings": {
             "alt-cmd-f": null
-        }
-    },
-    {
-        "context": "BufferSearchBar",
-        "bindings": {
-            "alt-cmd-f": "search::ToggleSelection"
         }
     },
     {
@@ -244,9 +233,45 @@
         }
     },
     {
-      "context": "Workspace",
-      "bindings": {
-        "cmd-5": null
-      }
+        "context": "Workspace",
+        "bindings": {
+            "cmd-5": null
+        }
+    },
+    {
+        "context": "Onboarding",
+        "bindings": {
+            "alt-shift-a": null
+        }
+    },
+    {
+        "context": "(Editor && mode == full)",
+        "bindings": {
+            "cmd-l": "agent::AddSelectionToThread"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "end": "editor::UnfoldLines"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "home": "editor::Fold"
+        }
+    },
+    {
+        "context": "KeymapEditor",
+        "bindings": {
+            "cmd-shift-r": "keymap_editor::ToggleKeystrokeSearch"
+        }
+    },
+    {
+        "context": "KeystrokeInput",
+        "bindings": {
+            "cmd-shift-r": "keystroke_input::StopRecording"
+        }
     }
 ]
